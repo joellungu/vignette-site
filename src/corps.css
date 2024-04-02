@@ -1,0 +1,62 @@
+.corps-page {
+    margin: 10;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.icon-carte {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: cadetblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carte:hover {
+    background-color: rgb(77,77,88);
+    /* background-color: rgb(121, 121, 243); */
+}
+
+.carte {
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+    height: 360px;
+    background-color: rgb(77,77,77);
+    /* background-color: rgb(178, 178, 237); */
+    backdrop-filter: blur(25px);
+    backdrop-filter: brightness(30%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: whitesmoke;
+}
+
+.contenu {
+    font-size: medium;
+    text-align: justify;
+    font-family: roboto;
+}
+
+.bouton {
+    height: 48px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton{
+    font-weight: bold;
+}
+
