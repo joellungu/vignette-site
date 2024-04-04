@@ -1,10 +1,9 @@
 body{
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     
-    /* display: grid; */
     /*  */
-    
+    text-align: center;
     /* Add the blur effect */
     /* filter: blur(8px);
     -webkit-filter: blur(8px); */
@@ -12,6 +11,10 @@ body{
     /* Full height */
     height: 100%;
 
+}
+
+div {
+    font-family: roboto;
 }
 
 /* .bg-photo {
@@ -24,10 +27,20 @@ body{
     width: 100%;
 } */
 
-.container {
+.containers {
     padding: 0px;
-    /* height: 150vh; */
+    /*  */
+    background-color: #D8D8D8;
+    height: 100vh;
     display: grid;
+    /* justify-content: center; */
+    /* align-items: center; */
+    grid-template-rows: 20% auto;
+    grid-template-areas: 
+    "entete"
+    "corps-page";
+    /* height: 150vh; */
+    /* display: grid;
     grid-template-columns: 1fr 7fr 1fr;
     grid-template-rows: 100px 500px 40% 40% 100px;
     grid-template-areas: 
@@ -38,225 +51,90 @@ body{
     "bas-de-page bas-de-page bas-de-page";
     background-image: url("./business-men-drive-cars-their-cars.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.entete {
-    display: flex;
-    background-color: white;
-    text-align: center;
-    align-content: center;
-    justify-content: space-around;
-    height: 50px;
-    width: 100vw;
-    /* background-color: transparent; */
-    /* Effet blur */
-    backdrop-filter: blur(25px);
-    backdrop-filter: brightness(30%);
-    /* backdrop-filter: contrast(40%);
-    backdrop-filter: drop-shadow(4px 4px 10px blue);
-    backdrop-filter: grayscale(30%);
-    backdrop-filter: hue-rotate(120deg);
-    backdrop-filter: invert(70%);
-    backdrop-filter: opacity(20%);
-    backdrop-filter: sepia(90%);
-    backdrop-filter: saturate(80%); */
-}
-
-.accueil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: whitesmoke;
-    background-color: rgb(77,77,88);
-    /* background-color: rgb(121, 121, 243); */
-    padding: 0px 10px;
-}
-
-.haut-de-page {
-    grid-area: haut-de-page;
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    /* background-color: rgb(77,77,77); */
-    backdrop-filter: blur(55px);
-    backdrop-filter: brightness(30%);
-    /* text-align: center; */
-    align-items: center;
-    justify-content: space-evenly;
+    background-size: cover; */
 }
 
 .corps-page {
-    /* height: 80%; */
-    grid-area: corps-page;
+    grid-area: "corps-page";
+    background-color: #D8D8D8;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    /* background-color: aqua; */
+    /* height: 50%; */
+    width: 100vw;
+    margin: 5px 0px;
 }
 
-.secutite {
-    grid-area: secutite;
-    display: grid;
-    grid-template-columns: 4fr 6fr;
-    background-color: whitesmoke;
-}
-
-.rapidite {
-    grid-area: rapidite;
-    display: grid;
-    grid-template-columns: 4fr 6fr;
-}
-
-.bas-de-page {
-    /* height: 50px; */
-    /* background-color: blueviolet; */
-    grid-area: bas-de-page;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0px 10px;
-    backdrop-filter: blur(55px);
-    backdrop-filter: brightness(30%);
-}
-
-/* Les trois classes du haut de page */
-
-.toteme {
-    grid-area: toteme;
-    /* background-color: aquamarine; */
+.entete {
+    grid-area: "entete";
+    display: gird;
     text-align: center;
-    height: 100;
-    width: 100;
+    background-color: white;
+    /* align-content: center; */
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 100px;
+    grid-template-areas: 
+    "entete-1"
+    "entete-2";
+    /* height: 150px; */
+    width: 100vw;
+    /* margin-bottom: 5px solide red; */
+    /*  */
+    border: 1px solid #B2B2B2;
+    padding: 0px;
+    box-shadow: 0px 2px 5px #B2B2B2;
 }
 
-.logo-toteme {
-    height: 40px;
-    width: 40px;
-    background-image: url("Coat_of_Arms_Democratic_Republic_of_Congo.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    text-align: center;
-    margin: 10px;
-    
+.accueil {
     
 }
 
-.titre {
-    grid-area: titre;
-    /* background-color: blue; */
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.logo {
-    grid-area: logo;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.footer {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    /* background-color: yellow; */
-    /* Fallback color */
-    /* background-color: rgb(0,0,0);  */
-    /* Black w/opacity/see-through */
-    /* background-color: rgba(0,0,0, 0.4); 
-    color: white;
+@font-face {
+    font-family: chbd;
     font-weight: bold;
-    border: 3px solid #f1f1f1; */
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center; */
+    src: url("CooperHewitt-Bold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chbo;
+    src: url("CooperHewitt-Book.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chbi;
+    src: url("CooperHewitt-BookItalic.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chl;
+    src: url("CooperHewitt-Light.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chli;
+    src: url("CooperHewitt-LightItalic.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chs;
+    font-weight: bold;
+    src: url("CooperHewitt-Semibold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: cht;
+    src: url("CooperHewitt-Thin.otf") format("opentype");
+  }
+  @font-face {
+    font-family: chti;
+    src: url("CooperHewitt-ThinItalic.otf") format("opentype");
+  }
 
-    
+  /*  */
 
-}
+  .titre {
+    font-family: chbd, chs, Georgia, Times, 'Times New Roman', serif;
+    color: blue;
+  }
 
-/* ---------- */
-
-.logo1 {
-    grid-area: logo;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    /* background-color: yellow; */
-}
-
-.langue {
-    height: 25px;
-    width: 25px;
-    padding: 0px 10px;
-    background-image: url("./fr.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    text-align: center;
-    margin: 1px;
-    /* background-color: blueviolet; */
-}
-
-.titre1 {
-    grid-area: titre;
-    /* background-color: blue; */
-    /* text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* background-color: brown; */
-}
-
-.logo1 {
-    grid-area: logo;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-/*  */
-
-.icon-compte {
-    height: 20;
-    width: 20;
-    /* background-image: url("SolarUserBoldDuotone.svg"); */
-}
-
-.compte {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row
-}
-
-.acheter {
-    background-color: rgb(121, 121, 243);
-    color: whitesmoke;
-    font-size: large;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.acheter-style {
-    color: whitesmoke;
-    font-size: 2em;
-}
-
-svg{
-    max-width:400px;
-    display:block;
-    /* background-color: white; */
-}
+  .sous-titre {
+    font-family: chs, chl, Georgia, Times, 'Times New Roman', serif;
+  }
+  

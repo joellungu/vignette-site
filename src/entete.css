@@ -1,0 +1,86 @@
+.centre-entete {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.entete-1 {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 80%;
+}
+
+.espace {
+    border: 1 solid gray;
+}
+
+.entete-2 {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    width: 70%;
+    height: 30%;
+    border-top: 1px solid rgb(217, 221, 221);
+    text-align: center;
+}
+
+.bannier {
+    height: 80px;
+    width: 3px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.rouge {
+    height: 26px;
+    width: 3px;
+    background-color: red;
+}
+.jaune {
+    height: 26px;
+    width: 3px;
+    background-color: yellow;
+}
+
+.bleu {
+    height: 26px;
+    width: 3px;
+    background-color: blue;
+}
+
+.logo-centre {
+    text-align: center;
+    margin: 5px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    background-image: url("DGRK.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+}
+
+.style-text-dgrk-titre {
+    margin: 5px;
+    text-align: left;
+    font-size: medium;
+    font-family: roboto;
+}

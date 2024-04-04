@@ -4,52 +4,66 @@
     import MaterialSymbolsSpeed from "../logo/MaterialSymbolsSpeed.svelte";
     import MaterialSymbolsFamilyRestroom from "../logo/MaterialSymbolsFamilyRestroom.svelte";
     //import PhShieldCheckeredDuotone from "logo/MaterialSymbolsFamilyRestroom.svelte";
+    import { userSelect } from "../stores";
+  import Accueil from "./Accueil.svelte";
+  import CommandeVignette from "./CommandeVignette.svelte";
+  import Fac from "./Fac.svelte";
+  import Compte from "./Compte.svelte";
     
 </script>
 
-<div class="haut-de-page">
-    <div class="acheter-style">
-        Acheter votre vignette en toute simplicité !
-    </div>
-    <div class="acheter">
-        Acheter maintenant
-    </div>
-</div>
-<div class="corps-page">
-    <div class="carte">
-        <div class="icon-carte">
-            <svelte:component this={PhShieldCheckeredDuotone} />
-        </div>
-        Sécurisé
-        <div class="contenu">
-Enim pariatur non aliqua reprehenderit sit. Laboris enim excepteur et id. Incididunt eu consequat id culpa nisi occaecat nisi amet esse. Magna officia magna elit cillum officia Lorem. Amet incididunt ex in do voluptate ullamco cupidatat culpa qui. Mollit et elit esse eu pariatur sint anim ex anim nostrud officia nostrud. Et esse esse officia amet qui.
-        </div>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a href="/securite" class="bouton">En savoir plus</a>
-    </div>
-    <div class="carte">
-        <div class="icon-carte">
-            <svelte:component this={MaterialSymbolsSpeed} />
-        </div>
-        Rapide
-        <div class="contenu">
-Enim pariatur non aliqua reprehenderit sit. Laboris enim excepteur et id. Incididunt eu consequat id culpa nisi occaecat nisi amet esse. Magna officia magna elit cillum officia Lorem. Amet incididunt ex in do voluptate ullamco cupidatat culpa qui. Mollit et elit esse eu pariatur sint anim ex anim nostrud officia nostrud. Et esse esse officia amet qui.
-        </div>
-        <div class="bouton">
-            En savoir plus
-        </div>
-    </div>
-    <div class="carte">
-        <div class="icon-carte">
-            <svelte:component this={MaterialSymbolsFamilyRestroom} />
-        </div>
-        Accessible
-        
-        <div class="contenu">
-Enim pariatur non aliqua reprehenderit sit. Laboris enim excepteur et id. Incididunt eu consequat id culpa nisi occaecat nisi amet esse. Magna officia magna elit cillum officia Lorem. Amet incididunt ex in do voluptate ullamco cupidatat culpa qui. Mollit et elit esse eu pariatur sint anim ex anim nostrud officia nostrud. Et esse esse officia amet qui.
-        </div>
-        <div class="bouton">
-            En savoir plus
-        </div>
-    </div>
-</div>
+<style>
+  .centre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    /* margin: 30px; */
+  }
+  /* .corps-page {
+    grid-area: "corps-page";
+    background-color: #D8D8D8;
+    background-color: cadetblue;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr ;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+    width: 100vw;
+    margin: 5px 0px;
+  } */
+  .etape1 {
+    background-color: blue;
+    text-align: left;
+    padding: 0% 10% 10% 0%;
+  }
+  .etape2 {
+    background-color: green;
+  }
+  .etape3 {
+    background-color: red;
+  }
+  .alerte {
+    background-color: yellow;
+  }
+  .commencer {
+    background-color: orchid;
+  }
+  
+</style>
+
+{#if ($userSelect.anglet === 'Accueil')}
+    <Accueil />
+{/if}
+{#if ($userSelect.anglet === 'Commande votre vignette')}
+    <CommandeVignette />
+{/if}
+{#if ($userSelect.anglet === 'Foire aux questions')}
+    <Fac />
+{/if}
+{#if ($userSelect.anglet === 'Compte')}
+    <Compte />
+{/if}
