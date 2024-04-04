@@ -1,7 +1,12 @@
 <script>
   import Inscription from "./Inscription.svelte";
   import Modal from './Modal.svelte';
-
+  import { goto } from '$app/navigation';
+    
+    async function login() {
+        // Do some login stuff
+        goto('/profile');
+    }
 	let showModal = false;
 
 </script>
@@ -132,7 +137,7 @@
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password">
               </form>
-              <button>
+              <button on:click={login}>
                   Se connecter
               </button>
               <button>

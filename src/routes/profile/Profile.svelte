@@ -2,18 +2,18 @@
 	/**
    * @type {boolean}
    */
-	 export let showModal; // boolean
+	 //export let showModal; // boolean
 
 	/**
    * @type {HTMLDialogElement}
    */
 	let dialog; // HTMLDialogElement
 
-	$: if (dialog && showModal) dialog.showModal();
+	//$: if (dialog && showModal) dialog.showModal();
 </script>
 
 <style>
-	dialog {
+	/* dialog {
 		max-width: 80%;
         max-height: 650px;
 		border-radius: 0.2em;
@@ -39,7 +39,7 @@
 	}
 	dialog[open]::backdrop {
 		animation: fade 0.2s ease-out;
-	}
+	} */
 	@keyframes fade {
 		from {
 			opacity: 0;
@@ -48,9 +48,16 @@
 			opacity: 1;
 		}
 	}
-	button {
-		display: block;
-	}
+    .centre {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 100vh;
+        background-color: white;
+        /* margin: 30px; */
+    }
     .corps {
         height: 650px;
         width: 80%;
@@ -108,6 +115,7 @@
         box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
     } */       
   }
+  
   button {
     /* background-color: #1859bb;
     border: none;
@@ -154,106 +162,96 @@
   }
 </style>
 
-
-<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-<dialog
-	bind:this={dialog}
-	on:close={() => (showModal = false)}
-	on:click|self={() => dialog.close()}
->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="corps" on:click|stopPropagation>
-        <!-- <hr /> -->
-		<slot class="tete2" />
-            S'Inscrire
-		<slot />
-        
-        
-        <div class="type1">
-            <div class="type2">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="Nom">
-            </div>
-            <div class="type2">
-                <label for="postnom">Postnom</label>
-                <input type="text" id="postnom" name="Nom de famille">
-            </div>
-            <div class="type2">
-                <label for="prenom">Prenom</label>
-                <input type="text" id="prenom" name="prenom">
-            </div>
+<div class="corps-page">
+    <div class="centre">
+        <div class="corps">
+            <!-- <hr /> -->
             
-        </div>
-        <div class="type2">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div class="type2">
-            <label for="confiremail">Confirme email</label>
-            <input type="confiremail" id="confiremail" name="confiremail">
-        </div>
-        <div class="type2">
-            <label for="phone">Téléphone</label>
-            <input type="phone" id="telephone" name="telephone">
-        </div>
-        <div class="type1">
-            <div class="type2">
-                <label for="ville">Ville</label>
-                <input type="text" id="ville" name="ville">
-            </div>
-            <div class="type2">
-                <label for="commune">Commune</label>
-                <input type="text" id="commune" name="commune">
-            </div>
-            <div class="type2">
-                <label for="quartier">Quartier</label>
-                <input type="text" id="quartier" name="quartier">
-            </div>
-        </div>
-        <div class="type1">
-            <div class="type2">
-                <label for="avenue">Avenue</label>
-                <input type="text" id="avenue" name="avenue">
-            </div>
-            <div class="type2">
-                <label for="numero">Numéro</label>
-                <input type="text" id="numero" name="numero">
-            </div>
-        </div>
-        <div class="type2">
-            <label for="fname">Date de naissance</label>
             <div class="type1">
                 <div class="type2">
-                    <input type="text" id="jour" name="jour">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="Nom">
                 </div>
                 <div class="type2">
-                    <input type="text" id="jour" name="jour">
+                    <label for="postnom">Postnom</label>
+                    <input type="text" id="postnom" name="Nom de famille">
                 </div>
                 <div class="type2">
-                    <input type="text" id="annee" name="annee">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" id="prenom" name="prenom">
                 </div>
+                
             </div>
-        </div>
-        <div class="type2">
-            <label for="fname">Genre</label>
+            <div class="type2">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="type2">
+                <label for="confiremail">Confirme email</label>
+                <input type="confiremail" id="confiremail" name="confiremail">
+            </div>
+            <div class="type2">
+                <label for="phone">Téléphone</label>
+                <input type="phone" id="telephone" name="telephone">
+            </div>
             <div class="type1">
-                <div class="type1">
-                    <label for="femme">Femme</label>
-                    <input type="checkbox" value="Femme" id="femme" name="femme">
+                <div class="type2">
+                    <label for="ville">Ville</label>
+                    <input type="text" id="ville" name="ville">
                 </div>
-                <div class="type1">
-                    <label for="homme">Homme</label>
-                    <input type="checkbox" value="Homme" id="homme" name="homme">
+                <div class="type2">
+                    <label for="commune">Commune</label>
+                    <input type="text" id="commune" name="commune">
+                </div>
+                <div class="type2">
+                    <label for="quartier">Quartier</label>
+                    <input type="text" id="quartier" name="quartier">
                 </div>
             </div>
+            <div class="type1">
+                <div class="type2">
+                    <label for="avenue">Avenue</label>
+                    <input type="text" id="avenue" name="avenue">
+                </div>
+                <div class="type2">
+                    <label for="numero">Numéro</label>
+                    <input type="text" id="numero" name="numero">
+                </div>
+            </div>
+            <div class="type2">
+                <label for="fname">Date de naissance</label>
+                <div class="type1">
+                    <div class="type2">
+                        <input type="text" id="jour" name="jour">
+                    </div>
+                    <div class="type2">
+                        <input type="text" id="jour" name="jour">
+                    </div>
+                    <div class="type2">
+                        <input type="text" id="annee" name="annee">
+                    </div>
+                </div>
+            </div>
+            <div class="type2">
+                <label for="fname">Genre</label>
+                <div class="type1">
+                    <div class="type1">
+                        <label for="femme">Femme</label>
+                        <input type="checkbox" value="Femme" id="femme" name="femme">
+                    </div>
+                    <div class="type1">
+                        <label for="homme">Homme</label>
+                        <input type="checkbox" value="Homme" id="homme" name="homme">
+                    </div>
+                </div>
+            </div>
+            <div>_______________</div>
+            <button>
+                Modifier
+            </button>
+            <hr />
+            <!-- svelte-ignore a11y-autofocus -->
+            <!-- <button autofocus on:click={() => dialog.close()}>close modal</button> -->
         </div>
-        <div>_______________</div>
-        <button>
-            S'Inscrire
-          </button>
-		<hr />
-		<!-- svelte-ignore a11y-autofocus -->
-		<!-- <button autofocus on:click={() => dialog.close()}>close modal</button> -->
-	</div>
-</dialog>
-
+    </div>
+</div>
