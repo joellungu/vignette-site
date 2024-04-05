@@ -32,6 +32,7 @@ import Securite from "./securite.svelte";
     </div> -->
     <Entete/>
     <Corps/>
+    <BasDePage/>
     <!-- <Corps/>
     <Rapidite/>
     <Securite/>

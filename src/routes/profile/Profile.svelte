@@ -53,7 +53,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 50%;
         height: 100vh;
         background-color: white;
         /* margin: 30px; */
