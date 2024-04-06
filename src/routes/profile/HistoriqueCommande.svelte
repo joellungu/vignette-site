@@ -2,8 +2,10 @@
 // @ts-nocheck
 
     import { Google, Linkedin, Facebook, TwitterX, Phone, Chat, CarFront, CalendarDate } from "svelte-bootstrap-icons";
-    import { Qr } from '@sveltevk/qr';
-//   import QrCode from "svelte-qrcode"
+    
+    //import { Qr } from '@sveltevk/qr';
+    //new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+    //import QrCode from "svelte-qrcode"
 
 
     const sections = {
@@ -195,12 +197,20 @@
     a {
         padding: 10px;
     }
-    .qrcode {
+    #qrcode {
         padding: 10px;
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
     }
     
 </style>
-
+<!-- <svelte:head>
+    <script src="https://js.stripe.com/v3/" on:load={() => console.log('script:load') }></script>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), "https://webisora.com");
+    </script>
+</svelte:head> -->
 <div>
     <div class="corps-page">
         <div class="centre">
@@ -230,11 +240,11 @@
 
                             <div class="carte-corps">
                                 <div class="carte-body">
-                            
-                                    <div class="qrcode">
-                                        <Qr text="Text to encode" qrSize={256}  />
+                                   
+                                    <img src="https://quickchart.io/chart?cht=qr&chs=150x150&chl=Testing123&dark=f00&light=0ff" alt="">
+                                        <!-- <Qr text="Text to encode" qrSize={256}  /> -->
                                         <!-- <QrCode codeValue="12354234562345" squareSize=200/> -->
-                                    </div>
+                                    
     
                                 </div>
     
