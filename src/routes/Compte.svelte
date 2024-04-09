@@ -1,13 +1,59 @@
 <script>
-  import Inscription from "./Inscription.svelte";
+  import Inscription from "./inscription/Inscription.svelte";
+  // @ts-ignore
   import Modal from './Modal.svelte';
   import { goto } from '$app/navigation';
+  import RepLogin from "./RepLogin.svelte";
+  import { profil } from "../stores";
+
+  let email = '';
+  let mdp = '';
     
     async function login() {
         // Do some login stuff
-        goto('/profile');
+        const res = await fetch('http://localhost:8080/utilisateur/login?email='+email+'&mdp='+mdp, {
+				method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+				// body: JSON.stringify(
+        //   {
+        //             'nom':nom,
+        //             'postnom':postnom,
+        //             'prenom':prenom,
+        //             'email':email,
+        //             'telephone':telephone,
+        //             'ville':ville,
+        //             'commune':commune,
+        //             'quartier':quartier,
+        //             'avenue':avenue,
+        //             'numero':numero,
+        //             'dateNaissance':'13-06-1994',
+        //             'genre': radioValue,
+        //             'mdp':"123456789",
+        //             'activer':false,
+        //         },
+        //       ),
+                //makeid(10)
+			});
+            //
+            const json = await res.json();
+            console.log(json);
+            if(json['status'] === 'succes'){
+              // @ts-ignore
+              profil['profil'] = json['data'];
+              goto('/profile');
+            }else{
+              messageServeur = json['message'];
+              showModalRep = true;
+            }
+        //
     }
 	let showModal = false;
+  //
+  let showModalRep = false;
+  let messageServeur = "";
 
 </script>
 
@@ -47,7 +93,7 @@
     /* background-color: aqua; */
   }
   button {
-    /* background-color: #1859bb;
+    /* background-color: #0095C9;
     border: none;
     color: white;
     padding: 10px 27px;
@@ -70,7 +116,7 @@
     padding: 0 11px;
     text-align: center;
     width: 100%;
-    min-width: 200px;
+    min-width: 100px;
     font-weight: 500;
     color: #0F1111;
     /* :hover{
@@ -120,6 +166,14 @@
     font-family: chbo;
   }
 
+  .error {
+		display: none;
+	}
+	input[type='email']:invalid + .error {
+		display: initial;
+		color: red;
+	}
+
 </style>
 
 <div>
@@ -133,9 +187,12 @@
               <form class="form">
                 
                 <label for="fname">Email</label>
-                <input type="text" id="email" name="email">
+                <input type="email" id="email" name="email" bind:value={email}>
+                <div class="error">
+                  Email invalide
+                </div>
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" bind:value={mdp}>
               </form>
               <button on:click={login}>
                   Se connecter
@@ -147,33 +204,12 @@
                 Créer un compte
               </button>
               <Inscription bind:showModal>
-                <!-- <h2 slot="tete2">
-                  modal
-                  <small><em>adjective</em> mod·al \ˈmō-dəl\</small>
-                </h2> -->
-                <!-- <div class="tete2">
-                  Connexion
-                </div> -->
-                <!-- <ol class="definition-list">
-                  <li>of or relating to modality in logic</li>
-                  <li>
-                    containing provisions as to the mode of procedure or the manner of taking effect —used of a
-                    contract or legacy
-                  </li>
-                  <li>of or relating to a musical mode</li>
-                  <li>of or relating to structure as opposed to substance</li>
-                  <li>
-                    of, relating to, or constituting a grammatical form or category characteristically indicating
-                    predication
-                  </li>
-                  <li>of or relating to a statistical mode</li>
-                </ol> -->
-              
-                <!-- <a href="https://www.merriam-webster.com/dictionary/modal">merriam-webster.com</a> -->
               </Inscription>
             </div>
             
           </div>
       </div>
     </div>
+    <RepLogin bind:showModalRep bind:messageServeur>
+    </RepLogin>
 </div>

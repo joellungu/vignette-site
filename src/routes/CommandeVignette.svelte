@@ -1,5 +1,11 @@
 <script>
     import { Alarm, Bank, CloudMoon, ExclamationTriangle } from "svelte-bootstrap-icons";
+    import { userSelect } from "../stores";
+    //
+    function onClickCompte () {
+        $userSelect = { anglet: "Compte"}
+    }
+    
     const etapes = {
 		"1": "Création et enregistrement de profil",
   	    "2": "Identification du véhicule",
@@ -36,7 +42,7 @@
     .alertes {
         margin: 20px 50px;
         background-color: blueviolet;
-        border: 1 solde #1859bb;
+        border: 1 solde #0095C9;
         padding: 0px;
         box-shadow: 0px 2px 5px #B2B2B2;
         
@@ -108,12 +114,12 @@
     }
 
     .sous-titre .dure {
-        color: #1859bb;
+        color: #0095C9;
         font-weight: bold;
     }
 
     .carte {
-        background-color: #1859bb;
+        background-color: #0095C9;
         height: 200px;
         width: 200px;
         display: flex;
@@ -168,7 +174,7 @@
             <div class="etape1">
               <div class="goupe-titre">
                 <div class="titre">
-                  Commande votre vignette
+                  Commander votre vignette
                 </div>
                 <div class="sous-titre">
                   Ce service vous permet en quelques clics de procéder à la commande d'une vignette pour votre véhicule
@@ -178,7 +184,7 @@
             <div class="etape2">
                 <div class="goupe-titre">
                     <div class="titre">
-                      Commande votre vignette
+                      Déroulé de votre commande
                     </div>
                     <div class="sous-titre">
                         <Alarm height={14} width={14}/> 
@@ -218,7 +224,7 @@
                 </div>
             </div>
             <div class="commencer">
-              <button>
+              <button on:click={onClickCompte}>
                 Commencer
               </button>
             </div>

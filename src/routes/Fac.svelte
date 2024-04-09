@@ -76,11 +76,10 @@
         align-items: flex-start;
         flex-direction: column;
         width: 100%;
-
     }
     
     .index {
-        background-color: #1859bb;
+        background-color: #0095C9;
         width: 100px;
         height: 100px;
         text-align: center;

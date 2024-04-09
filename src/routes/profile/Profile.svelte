@@ -1,4 +1,8 @@
 <script>
+// @ts-nocheck
+
+  import { profil } from "../../stores";
+
 	/**
    * @type {boolean}
    */
@@ -10,6 +14,28 @@
 	let dialog; // HTMLDialogElement
 
 	//$: if (dialog && showModal) dialog.showModal();
+
+    function t(){
+        console.log(profil['profil']);
+    }
+    t();
+
+    let nom = profil['profil']['nom'];
+    let postnom = profil['profil']['postnom'];
+    let prenom = profil['profil']['prenom'];
+    let email = profil['profil']['email'];
+    let telephone = profil['profil']['telephone'];
+    let ville = profil['profil']['ville'];
+    let commune = profil['profil']['commune'];
+    let quartier = profil['profil']['quartier'];
+    let avenue = profil['profil']['avenue'];
+    let numero = profil['profil']['numero'];
+    let jour = profil['profil']['jour'];
+    let mois = profil['profil']['mois'];
+    let annee = profil['profil']['annee'];
+    let value = profil['profil']['mdp'];
+    $: type = show_password ? 'text' : 'password';
+    $: show_password = false;
 </script>
 
 <style>
@@ -116,8 +142,8 @@
     } */       
   }
   
-  button {
-    /* background-color: #1859bb;
+  .button {
+    /* background-color: #0095C9;
     border: none;
     color: white;
     padding: 10px 27px;
@@ -160,6 +186,16 @@
     flex-direction: column;
     justify-content: center;
   }
+  button svg {
+		width: 20px;
+		height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+        margin: 10px;
+	}
+	#eye {
+		margin: -10px;
+	}
 </style>
 
 <div class="corps-page">
@@ -170,52 +206,66 @@
             <div class="type1">
                 <div class="type2">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="Nom">
+                    <input type="text" id="nom" name="Nom" bind:value={nom}>
                 </div>
                 <div class="type2">
                     <label for="postnom">Postnom</label>
-                    <input type="text" id="postnom" name="Nom de famille">
+                    <input type="text" id="postnom" name="Nom de famille" bind:value={postnom}>
                 </div>
                 <div class="type2">
                     <label for="prenom">Prenom</label>
-                    <input type="text" id="prenom" name="prenom">
+                    <input type="text" id="prenom" name="prenom" bind:value={prenom}>
                 </div>
                 
             </div>
             <div class="type2">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" bind:value={email}>
             </div>
             <div class="type2">
-                <label for="confiremail">Confirme email</label>
-                <input type="confiremail" id="confiremail" name="confiremail">
+                <label for="confiremail">Mot de passe</label>
+                <div class="type1">
+                    <input type={show_password ? "text" : "password"} id="confiremail" name="confiremail" {value}>
+                    <button id="eye" on:click|preventDefault={() => show_password = !show_password}>
+                        {#if show_password}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="red">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                        </svg>
+                        {:else}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        {/if}
+                    </button>
+                </div>
             </div>
             <div class="type2">
                 <label for="phone">Téléphone</label>
-                <input type="phone" id="telephone" name="telephone">
+                <input type="phone" id="telephone" name="telephone" bind:value={telephone}>
             </div>
             <div class="type1">
                 <div class="type2">
                     <label for="ville">Ville</label>
-                    <input type="text" id="ville" name="ville">
+                    <input type="text" id="ville" name="ville" bind:value={ville}>
                 </div>
                 <div class="type2">
                     <label for="commune">Commune</label>
-                    <input type="text" id="commune" name="commune">
+                    <input type="text" id="commune" name="commune" bind:value={commune}>
                 </div>
                 <div class="type2">
                     <label for="quartier">Quartier</label>
-                    <input type="text" id="quartier" name="quartier">
+                    <input type="text" id="quartier" name="quartier" bind:value={quartier}>
                 </div>
             </div>
             <div class="type1">
                 <div class="type2">
                     <label for="avenue">Avenue</label>
-                    <input type="text" id="avenue" name="avenue">
+                    <input type="text" id="avenue" name="avenue" bind:value={avenue}>
                 </div>
                 <div class="type2">
                     <label for="numero">Numéro</label>
-                    <input type="text" id="numero" name="numero">
+                    <input type="text" id="numero" name="numero" bind:value={numero}>
                 </div>
             </div>
             <div class="type2">
@@ -246,7 +296,7 @@
                 </div>
             </div>
             <div>_______________</div>
-            <button>
+            <button class="button">
                 Modifier
             </button>
             <hr />

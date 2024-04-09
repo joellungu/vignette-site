@@ -33,7 +33,7 @@
         background-color: white;
     }
     .accueil {
-        background-color: #1859bb;
+        background-color: #0095C9;
         text-align: center;
         height: 100%;
         /*  */
@@ -48,7 +48,7 @@
         
     }
     .accueil:hover{
-        background-color: #688cc3;
+        background-color: #0095C9;
         /* rgb(236, 234, 234); */
         color: black;
     }
@@ -63,7 +63,7 @@
         padding: 0px 10px;
     }
     .cmd-vignette:hover{
-        background-color: #688cc3;
+        background-color: #0095C9;
         /* rgb(236, 234, 234); */
         color: black;
     }
@@ -79,7 +79,7 @@
         font-family: chl;
     }
     .fac:hover{
-        background-color: #688cc3;
+        background-color: #0095C9;
         /* rgb(236, 234, 234); */
         color: black;
     }
@@ -94,7 +94,7 @@
         padding: 0px 10px;
     }
     .compte:hover{
-        background-color: #688cc3;
+        background-color: #0095C9;
          /* rgb(236, 234, 234); */
         color: black;
     }

@@ -1,17 +1,35 @@
 <script>
-    import { Google, Linkedin, Facebook, TwitterX, Phone, Chat, CarFront, 
-        CalendarDate} from "svelte-bootstrap-icons";
+    import { Palette, CarFrontFill, Facebook, TwitterX, Phone, Chat, CarFront, 
+        CalendarDate,
+        Circle,
+        ListOl} from "svelte-bootstrap-icons";
   import NouveauVehicule from "./NouveauVehicule.svelte";
   import DetailsVehicule from "./DetailsVehicule.svelte";
-    const sections = {
-		"BMW": "Incididunt dolore commodo tempor quis anim cillum adipisicing excepteur tempor in consectetur minim...",
-  	    "MERCEDECE": "Incididunt dolore commodo tempor quis anim cillum adipisicing excepteur tempor in consectetur minim...",
-		"TOYOTA": "Incididunt dolore commodo tempor quis anim cillum adipisicing excepteur tempor in consectetur minim...",
-		"JEEP": "Incididunt dolore commodo tempor quis anim cillum adipisicing excepteur tempor in consectetur minim...",
-		"VW": "Incididunt dolore commodo tempor quis anim cillum adipisicing excepteur tempor in consectetur minim..."
-	}
+   /**
+   * @type {any[]}
+   */
+     $: sections = [];
     let showModal = false;
     let detailsVehicule = false;
+    //
+    async function loadData() {
+        //
+        const res = await fetch("http://localhost:8080/vehicule", {
+				method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                //
+                //makeid(10)
+			},
+        );
+        //['data']
+        //const json = await res.json()
+        sections = await res.json();
+        console.log(sections);
+    }
+    loadData()
 </script>
 
 <style>
@@ -83,7 +101,7 @@
         /* background-color: aquamarine; */
     }
     button {
-        background-color: #1859bb; /* Green */
+        background-color: #0095C9; /* Green */
         border: none;
         color: white;
         padding: 15px 32px;
@@ -128,7 +146,7 @@
         width: 100%;
     }
     .entete-carte {
-        background-color: #1859bb;
+        background-color: #0095C9;
         height: 30px;
         width:inherit;
         padding: 0px;
@@ -200,7 +218,7 @@
                 </button>
             </div>
             <br >
-            {#each Object.entries(sections) as [title, paragraph]}
+            {#each sections as veh}
                 <!-- <h1>{title}</h1>
                 <p>{paragraph}</p> -->
                 <div class="carte">
@@ -211,25 +229,25 @@
                     <!-- <div class="carte-body"> -->
                         
                             <div class="entete-carte">
-                                <div class="titre1">{title}</div>
-                                <div class="titre2">A380 i</div>
+                                <div class="titre1">{veh.model}</div>
+                                <div class="titre2">{veh.marque}</div>
                             </div>
 
                             <div class="carte-body">
                             
                                 <div class="list-title">
-                                    <div class="logo-type"><CalendarDate height={25} width={25} color="black"/></div>
+                                    <div class="logo-type"><CarFrontFill height={25} width={25} color="black"/></div>
                                     <div class="corps-type">
                                         <div class="titre-type">Type de véhicule</div>
-                                        <div class="sous-titre-type">Essence</div>
+                                        <div class="sous-titre-type">{veh.typeVehicule}</div>
                                     </div>
                                 </div>
 
                                 <div class="list-title">
-                                    <div class="logo-type"><CalendarDate height={25} width={25} color="black"/></div>
+                                    <div class="logo-type"><ListOl height={25} width={25} color="black"/></div>
                                     <div class="corps-type">
                                         <div class="titre-type">Numéro du chassis</div>
-                                        <div class="sous-titre-type">4567FGH567FGHJ</div>
+                                        <div class="sous-titre-type">{veh.nChassis}</div>
                                     </div>
                                 </div>
 
@@ -238,18 +256,18 @@
                             <div class="carte-body">
 
                                 <div class="list-title">
-                                    <div class="logo-type"><CalendarDate height={25} width={25} color="black"/></div>
+                                    <div class="logo-type"><Circle height={25} width={25} color="black"/></div>
                                     <div class="corps-type">
                                         <div class="titre-type">Volant</div>
-                                        <div class="sous-titre-type">Droit</div>
+                                        <div class="sous-titre-type">{veh.volant}</div>
                                     </div>
                                 </div>
 
                                 <div class="list-title">
-                                    <div class="logo-type"><CalendarDate height={25} width={25} color="black"/></div>
+                                    <div class="logo-type"><Palette height={25} width={25} color="black"/></div>
                                     <div class="corps-type">
                                         <div class="titre-type">Couleur</div>
-                                        <div class="sous-titre-type">Rouge</div>
+                                        <div class="sous-titre-type">{veh.couleur}</div>
                                     </div>
                                 </div>
                             
@@ -259,9 +277,14 @@
                                 <a on:click={() => (detailsVehicule = true)} >
                                     Détails
                                 </a>
+                                {#if veh.acttiver}
                                 <a href="/">
                                     Nouvelle vignette
                                 </a>
+                                {:else}
+                                    <div style="color: brown;"> Véhicule non activé </div>
+                                {/if}
+                                
                             </div>
                             <!-- {paragraph} -->
                                 <!-- <div class="goupe">

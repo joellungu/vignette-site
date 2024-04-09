@@ -35,7 +35,7 @@
           background-color: white;
       }
       .accueil {
-          background-color: #1859bb;
+          background-color: #0095C9;
           text-align: center;
           height: 100%;
           /*  */

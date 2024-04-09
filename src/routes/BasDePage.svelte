@@ -1,6 +1,6 @@
 
 <script>
-    import { Google, Linkedin, Facebook, TwitterX, PhoneFill, EnvelopeFill, GeoAltFill } from "svelte-bootstrap-icons";
+    import { Google, Linkedin, Facebook, TwitterX, PhoneFill, EnvelopeFill, GeoAltFill, Instagram } from "svelte-bootstrap-icons";
   
 </script>
 
@@ -13,12 +13,24 @@
     .centre {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: center;
+        align-items: center;
+        width: 99%;
+        /* height: 100vh; */
+        /* background-color: white; */
+        background-color: #0095C9;
+        gap: 1px;
+        padding: 0px 10px;
+    }
+    .centre2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         width: 69%;
         /* height: 100vh; */
         /* background-color: white; */
-        background-color:oldlace;
+        background-color: #0095C9;
         gap: 1px;
         padding: 0px 10px;
     }
@@ -26,10 +38,21 @@
         display: flex;
         flex-direction: row;
         /* justify-content: center; */
-        align-items: start;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         gap: 10px;
+        margin: 10px;
+        /* background-color: aqua; */
+    }
+    .haut2 {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        gap: 1px;
         margin: 10px;
         /* background-color: aqua; */
     }
@@ -42,7 +65,7 @@
         height: 100px;
         /* gap: 10px; */
         /* padding: 10px; */
-        border-top: 1px solid rgb(159, 159, 159);
+        border-top: 1px solid rgb(259, 259, 259);
     }
     .goupe-titre {
         display: flex;
@@ -59,8 +82,8 @@
     .goupe-titre2 {
         display: flex;
         flex-direction: column;
-        align-items: self-start;
-        justify-content: space-evenly;
+        align-items: start;
+        justify-content: start;
         /* background-color: aqua; */
         width: 100%;
         /* height: 100px; */
@@ -70,9 +93,9 @@
     .titre {
         font-size: larger;
         font-weight: bold;
-        color: black;
+        color: white;
         font-family: chbd, chs;
-        font-size: 1.1em;
+        font-size: 0.8em;
         text-align: left;
         padding: 0;
         margin: 0;
@@ -82,10 +105,10 @@
     .sous-titre {
         font-size: medium;
         font-weight: bold;
-        color: black;
+        color: white;
         font-family: chl, chli;
         text-align: left;
-        font-size: 0.8em;
+        font-size: 0.6em;
         font-weight: 400;
         padding: 3px 0px;
         display: flex;
@@ -102,15 +125,16 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
         /* background-color: aquamarine; */
-        width: 300px;
+        /* width: 300px; */
     }
     .footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        /* width: 15%; */
+        /* width: 25%; */
         padding: 0px 10px;
     }
     a {
@@ -120,9 +144,9 @@
         justify-content: space-between;
         align-items: center;
         gap: 5px;
-        color: #1859bb;
-        text-decoration: none;
-        font-size: 0.8em;
+        color: white;
+        /* text-decoration: none; */
+        font-size: 0.6em;
 
     }
     strong {
@@ -148,12 +172,150 @@
     /* 
         background-color: #D8D8D8;
     */
+    .style-text-logo-bas {
+        font-size: 0.6em;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 2px;
+    }
+    .style-text-logo-bas2 {
+        font-size: 0.7em;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 2px;
+        width: 50%;
+    }
+    .logo-centre {
+        text-align: center;
+        margin: 2px;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blueviolet;
+        background-image: url("DGRK.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        height: 50px;
+        width: 50px;
+        /* border-radius: 25px; */
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blueviolet;
+        background-image: url("DGRK.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        height: 50px;
+        width: 50px;
+        /* border-radius: 25px; GoogleMapTA.webp */
+    }
+    .bannier {
+        height: 50px;
+        width: 3px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .map {
+        height: 100px;
+        width: 200px;
+        background-color: aquamarine;
+        background-image: url("GoogleMapTA.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .espace {
+        margin: 3px;
+    }
+    button {
+    /* background-color: #0095C9;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px; */
+
+    font-family: chbo;
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 0px;
+    /* box-shadow: 0 2px 2px 0 rgb(213 217 217 / 50%); */
+    background: #FFD814;
+    border: 1px solid #FCD200;
+    font-size: 10px;
+    height: 31px;
+    padding: 0 11px;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    font-weight: 500;
+    color: #0F1111;
+    /* :hover{
+        background: #F7CA00;
+        border-color: #F2C200;
+        box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    }
+      */
+  }
+
+  input {
+    /* padding: 10px 5px;
+    border-radius: 5px;
+    border: 1 solid white; */
+    flex: 1;
+    font-family: chbo;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #24292e;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #e1e4e8;
+    border-radius: 0px;
+    outline: none;
+    box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+    /* :focus{
+        border-color: #0366d6;
+        outline: none;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    } */       
+ }
+
+  .newslatter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 2px;
+  }
 
 </style>
 
 <div class="bas-de-page">
     <div class="centre">
-        <div class="goupe-titre">
+        <!-- <div class="goupe-titre">
             <br>
             <div class="goupe-titre">
                 <div class="titre">
@@ -187,62 +349,109 @@
                         </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="haut">
-            <div class="goupe-titre2">
-                <div class="titre">
-                    Accès Rapides
+        </div> -->
+        <div class="centre2">
+            <div class="haut">
+                <div class="haut2">
+                    <div class="logo-centre">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="bannier">
+                        <!-- <div class="bleu"></div>
+                        <div class="jaune"></div>
+                        <div class="rouge"></div> -->
+                        
+                    </div>
+                    <div class="style-text-logo-bas2">
+                        DIRECTION GENERALE DES RECETTES DE KINSHASA
+                    </div>
+                    <!-- <div class="titre">
+                        Accès Rapides
+                    </div>
+                    <div class="goupe-titre">
+                        <a class="sous" href="/">Accueil</a>
+                        <a class="sous" href="/">Commande votre vignette</a>
+                        <a class="sous" href="/">Foire aux questions</a>
+                        <a class="sous" href="/">Compte</a>
+                    </div> -->
                 </div>
-                <div class="goupe-titre">
-                    <a class="sous" href="/">Accueil</a>
-                    <a class="sous" href="/">Commande votre vignette</a>
-                    <a class="sous" href="/">Foire aux questions</a>
-                    <a class="sous" href="/">Compte</a>
+                <div class="goupe-titre2">
+                    <div class="titre">
+                        Acces rapide
+                    </div>
+                    <div class="espace"></div>
+                    <div class="goupe-titre">
+                        
+                        <a href="/">Actualité</a>
+                        <a href="/">Commandez votre vignette</a>
+                        <!-- <a href="/"><Facebook height={25} width={25} color="black"/> lungujoel138@gmail.com</a>
+                        <a href="/"><Linkedin height={25} width={25} color="black"/> +243 825 381 693</a> -->
+                    </div>
+                    <div class="espace"></div>
+                    <div class="titre">
+                        Adresse physique
+                    </div>
+                    <div class="goupe-titre">
+                        
+                        <div class="style-text-logo-bas">3 av kintino Gombe</div>
+                        <!-- <a href="/"><Facebook height={25} width={25} color="black"/> lungujoel138@gmail.com</a>
+                        <a href="/"><Linkedin height={25} width={25} color="black"/> +243 825 381 693</a> -->
+                    </div>
+                    <div class="map"></div>
+                </div>
+                <div class="goupe-titre2">
+                    <div class="titre">
+                        Contact
+                    </div>
+                    <div class="goupe-titre">
+                        <div class="style-text-logo-bas">Contact: 0853045935</div>
+                        <a href="/">info-vignette@dgrk.cd</a>
+                        <div class="espace"></div>
+                        <div class="style-text-logo-bas">Enregistrez-vous à notre Newslatter</div>
+                        <div class="newslatter">
+                            <input class="" type="email">
+                            <button>Envoyer</button>
+                        </div>
+
+                    </div>
+                    <div class="espace"></div>
+                    <div class="espace"></div>
+                    <div class="titre">
+                        Suivez-nous
+                    </div>
+                    <div class="espace"></div>
+                    <div class="espace"></div>
+                    <div class="espace"></div>
+                    <div class="espace"></div>
+                    <div class="contact">
+                        <TwitterX height={25} width={25} color="white"/>
+                        <Facebook height={25} width={25} color="white"/>
+                        <Instagram height={25} width={25} color="white"/>
+                        <Linkedin height={25} width={25} color="white"/>
+                    </div>
                 </div>
             </div>
-            <div class="goupe-titre2">
-                <div class="titre">
-                    Contactez-Nous
+            <div class="bas">
+                <div class="footer">
+                    <div class="sous-titre">
+                        Copyright © 2024. Tout droit reservé.
+                    </div>
                 </div>
-                <div class="goupe-titre">
-                    <a href="/"><GeoAltFill height={15} width={15} color="black"/> 30 Avenue de la Justice Kinshasa, Gombe</a>
-                    <a href="/"><EnvelopeFill height={15} width={15} color="black"/> lungujoel138@gmail.com</a>
-                    <a href="/"><PhoneFill height={15} width={15} color="black"/> +243 815 381 693</a>
-                </div>
+                <!-- <div class="footer">
+                    <div class="icon-compte">
+                        <Google height={30} width={25} color="black"/>
+                    </div>
+                    <div class="icon-compte">
+                        <TwitterX height={30} width={25} color="black"/>
+                    </div>
+                    <div class="icon-compte">
+                        <Facebook height={30} width={25} color="black"/>
+                    </div>
+                    <div class="icon-compte" >
+                        <Linkedin height={30} width={25} color="black"/>
+                    </div>
+                </div> -->
             </div>
-            <div class="goupe-titre2">
-                <div class="titre">
-                    Réseaux sociaux
-                </div>
-                <div class="goupe-titre">
-                    <a href="/"><Google height={15} width={15} color="black"/> lungujoel138@gmail.com</a>
-                    <a href="/"><TwitterX height={15} width={15} color="black"/> +243 815 381 693</a>
-                    <a href="/"><Facebook height={15} width={15} color="black"/> lungujoel138@gmail.com</a>
-                    <a href="/"><Linkedin height={15} width={15} color="black"/> +243 815 381 693</a>
-                </div>
-            </div>
-        </div>
-        <div class="bas">
-            <div class="footer">
-                <div class="sous-titre">
-                    Copyright © 2024. Tout droit reservé.
-                </div>
-            </div>
-            <!-- <div class="footer">
-                <div class="icon-compte">
-                    <Google height={30} width={15} color="black"/>
-                </div>
-                <div class="icon-compte">
-                    <TwitterX height={30} width={15} color="black"/>
-                </div>
-                <div class="icon-compte">
-                    <Facebook height={30} width={15} color="black"/>
-                </div>
-                <div class="icon-compte" >
-                    <Linkedin height={30} width={15} color="black"/>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
